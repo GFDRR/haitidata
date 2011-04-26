@@ -1,6 +1,7 @@
 # Django settings for GeoNode project.
 from urllib import urlencode
 import os
+import geonode
 
 _ = lambda x: x
 
@@ -10,6 +11,7 @@ SITEURL = "http://localhost:8000/"
 TEMPLATE_DEBUG = DEBUG
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+GEONODE_ROOT = os.path.dirname(geonode.__file__)
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -107,15 +109,17 @@ MIDDLEWARE_CLASSES = (
 # This isn't required for running the geonode site, but it when running sites that inherit the geonode.settings module.
 LOCALE_PATHS = (
     os.path.join(PROJECT_ROOT, "locale"),
-    os.path.join(PROJECT_ROOT, "maps", "locale"),
+    os.path.join(GEONODE_ROOT, 'locale'),
+    os.path.join(GEONODE_ROOT, 'maps', 'locale'),
 )
 
-ROOT_URLCONF = 'geonode.urls'
+ROOT_URLCONF = 'haitidata.urls'
 
 # Note that Django automatically includes the "templates" dir in all the
 # INSTALLED_APPS, se there is no need to add maps/templates or admin/templates
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_ROOT,"templates"),    
+    os.path.join(PROJECT_ROOT,"templates"),
+    os.path.join(GEONODE_ROOT, 'templates'),
 )
 
 # The FULLY QUALIFIED url to the GeoServer instance for this GeoNode.
