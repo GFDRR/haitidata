@@ -3,3 +3,19 @@ haitidata.org
 The purpose of this site is to facilitate open access to Haiti-related geo-spatial information, data and knowledge products, and to encourage others to share and use them. Geospatial data can be used for many purposes: establishing baseline data, conducting risk assessments, planning, project monitoring, and tracking progress. Access to high quality information is critical for planners, policy makers, and other stakeholders involved in the reconstruction process in Haiti. This site is intended to facilitate more effective support to the country’s rehabilitation, recovery and longer- term sustainable development.
 
 Following the January 12, 2010 earthquake a large amount of geo-spatial data was created, noting information including earthquake intensity, flooding likelihood, landslide and tsunami hazards, and overall damage. The enormity of the current need for material assistance, support to reinforce the governance structure, and innumerable international and local organizations joining to assist in reconstruction and development processes, also poses a significant challenge to the government and other agent’s ability to coordinate to benefit the people of Haiti. This site hopes to help inform decision makers at all levels and in all sectors, for now and in planning for the future, including to manage the risk derived from natural hazards.
+
+
+INSTALLATION
+------------
+
+1.) Install GeoNode from the Ubuntu packages (assuming you have enabled the OpenGeo repo)
+    sudo apt-get install geonode
+
+2.) Activate GeoNode's virtual environment and install this package in editable mode:
+    source /var/www/geonode/wsgi/geonode/bin/activate
+    pip install -e git+https://github.com/GFDRR-Labs/haitidata#egg=haitidata
+
+3.) In geonode.wsgi change the reference from geonode.settings to haitidata.settings
+
+4.) Reload Apache:
+    sudo service apache2 reload
