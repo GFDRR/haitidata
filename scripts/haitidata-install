@@ -48,9 +48,14 @@ function checkup() {
 
 echo ">>>> Clone/pull from the specified GeoNode repo and branch"
 checkup GeoNode/geonode.git geonode
+pushd .
 cd geonode/src/GeoNodePy
 python setup.py develop
+popd
 
 echo ">>>> Installing this project in development mode"
-cd ../../../
+pushd .
+checkup GFDRR-Labs/haitidata.git haitidata
+cd haitidata
 python setup.py develop
+popd
