@@ -12,7 +12,7 @@ cd ..
 
 if [ ! -d "./tomcat" ]; then
     echo ">>>> Unpacking fresh tomcat."
-    tar xvzf downloaded/tomcat.zip
+    unzip downloaded/tomcat.zip
 fi
 
 echo ">>>> Installing geoserver and geonetwork in tomcat."
