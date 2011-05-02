@@ -1,0 +1,10 @@
+*.pyc
+*.~
+
+
+# Temporary directories created by install
+haitidata.egg-info
+downloaded
+geonode
+tomcat
+venv

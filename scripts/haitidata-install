@@ -1,0 +1,56 @@
+#!/bin/bash
+
+echo ">>>> Downloading components required for installation."
+mkdir -p downloaded
+cd downloaded
+wget -c "https://s3.amazonaws.com/geonodeariel/geonode-dependencies.pybundle"
+wget -c "https://s3.amazonaws.com/geonodeariel/geoserver-geonode-dev.war"
+wget -c "https://s3.amazonaws.com/geonodeariel/geonetwork.war"
+wget -c "https://s3.amazonaws.com/geonodeariel/tomcat.zip"
+wget -c "https://s3.amazonaws.com/geonodeariel/intermap.war"
+cd ..
+
+if [ ! -d "./tomcat" ]; then
+    echo ">>>> Unpacking fresh tomcat."
+    tar xvzf downloaded/tomcat.zip
+fi
+
+echo ">>>> Installing geoserver and geonetwork in tomcat."
+rm -rf tomcat/webapps/geoserver-geonode-dev*
+rm -rf tomcat/webapps/geonetwork*
+rm -rf tomcat/webapps/intermap*
+cp downloaded/geoserver-geonode-dev.war tomcat/webapps
+cp downloaded/geonetwork.war tomcat/webapps
+cp downloaded/intermap.war tomcat/webapps
+
+if [ ! -d "./venv" ]; then
+     echo ">>>> Creating the virtualenv and installing dependencies"
+     virtualenv venv
+     source venv/bin/activate
+     easy_install -U pip
+fi
+
+echo ">>>> Activating the virtualenv"
+source venv/bin/activate
+pip install downloaded/geonode-dependencies.pybundle
+
+function checkup() {
+  REPO="$1"
+  WORKING_DIR="$2"
+  if [ -d "${WORKING_DIR}" ];
+  then
+      echo "Updating ${WORKING_DIR} from upstream"
+      (cd "${WORKING_DIR}" && git pull)
+  else
+      git clone "git@github.com:${REPO}" "${WORKING_DIR}" || git clone "https://github.com/${REPO}" "${WORKING_DIR}"
+  fi
+}
+
+echo ">>>> Clone/pull from the specified GeoNode repo and branch"
+checkup GeoNode/geonode.git geonode
+cd geonode/src/GeoNodePy
+python setup.py develop
+
+echo ">>>> Installing this project in development mode"
+cd ../../../
+python setup.py develop
