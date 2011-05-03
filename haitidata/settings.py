@@ -264,7 +264,7 @@ ABSOLUTE_URL_OVERRIDES = {
 AUTH_PROFILE_MODULE = 'maps.Contact'
 REGISTRATION_OPEN = False
 
-TRANSLATION_REGISTRY = "geonode.translation"
+TRANSLATION_REGISTRY = "haitidata.translation"
 
 SERVE_MEDIA = DEBUG;
 
