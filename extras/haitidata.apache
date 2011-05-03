@@ -1,0 +1,37 @@
+WSGIDaemonProcess haitidata user=ubuntu threads=1 processes=5 python-path=/home/ubuntu/venv/lib/python2.6/site-packages
+
+<VirtualHost *:80>
+   ServerAdmin webmaster@localhost
+   ServerName haitidata.org
+   ServerAlias localhost
+
+   ErrorLog /home/ubuntu/logs/apache.error.log
+
+   # Possible values include: debug, info, notice, warn, error, crit,
+   # alert, emerg.
+   LogLevel warn
+
+   CustomLog /home/ubuntu/logs/apache.access.log combined
+
+  <Directory "/home/ubuntu/haitidata/extras/deploy/">
+       Allow from all
+   </Directory>
+
+   Alias /media/ "/home/ubuntu/static/"
+   <Directory "/home/ubuntu/static/">
+     Order allow,deny
+     Options Indexes FollowSymLinks
+     Allow from all
+     IndexOptions FancyIndexing
+   </Directory>
+
+   WSGIProcessGroup haitidata
+   WSGIApplicationGroup %{GLOBAL}
+   WSGIScriptAlias / /home/ubuntu/haitidata/extras/project.wsgi
+   WSGIPassAuthorization On
+  
+   ProxyPass /geoserver-geonode-dev http://localhost:8001/geoserver-geonode-dev
+   ProxyPassReverse /geoserver-geonode-dev http://localhost:8001/geoserver-geonode-dev
+   ProxyPass /geonetwork http://localhost:8001/geonetwork/
+   ProxyPassReverse /geonetwork http://localhost:8001/geonetwork
+</VirtualHost>
