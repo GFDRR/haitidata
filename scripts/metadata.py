@@ -7,7 +7,7 @@ def update(filename):
     layer_names = Layer.objects.values_list('name', flat=True)
     for row in reader:
         name = row['layer_name']
-        if name in layer_names and type(layer) is basestring:
+        if name in layer_names and type(name) is basestring:
             v = Layer.objects.get(name=name)
             v.title = row['title_en']
             v.abstract = row['abstract_en']
