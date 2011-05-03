@@ -16,8 +16,8 @@ WSGIDaemonProcess haitidata user=ubuntu threads=1 processes=5 python-path=/home/
        Allow from all
    </Directory>
 
-   Alias /media/ "/home/ubuntu/static/"
-   <Directory "/home/ubuntu/static/">
+   Alias /media/ "/home/ubuntu/haitidata/haitidata/site_media/static"
+   <Directory "/home/ubuntu/haitidata/haitidata/site_media/static">
      Order allow,deny
      Options Indexes FollowSymLinks
      Allow from all
