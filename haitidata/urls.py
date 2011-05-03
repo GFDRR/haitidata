@@ -41,6 +41,7 @@ urlpatterns = patterns('',
     (r'^avatar/', include('avatar.urls')),
     (r'^accounts/', include('registration.urls')),
     (r'^profiles/', include('profiles.urls')),
+    (r'^rosetta/', include('rosetta.urls')),
     )
 
 # Extra static file endpoint for development use
