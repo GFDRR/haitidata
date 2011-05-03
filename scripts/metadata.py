@@ -2,8 +2,6 @@ from excel import ExcelDictReader
 from geonode.maps.models import Layer
 from decimal import Decimal
 
-MAX_LAYERS=
-
 def update(filename):
     reader = ExcelDictReader(filename, 0, 11, 12)
     layer_names = Layer.objects.values_list('name', flat=True)
