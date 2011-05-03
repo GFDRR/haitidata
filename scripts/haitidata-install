@@ -66,5 +66,3 @@ checkup GFDRR-Labs/haitidata.git haitidata
 cd haitidata
 python setup.py develop
 popd
-
-pip install fabric
