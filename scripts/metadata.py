@@ -7,13 +7,14 @@ def update(filename):
     layer_names = Layer.objects.values_list('name', flat=True)
     for row in reader:
         name = row['layer_name']
-        if name not in layer_names:
-            print 'Layer not found: %s' % name
-            continue
-        v = Layer.objects.filter(name=name).update(
-                                 title = row['title_en'],
-                                 abstract = row['abstract_en'],
-                                )
+        if name in layer_names and type(layer) is basestring:
+            v = Layer.objects.get(name=name)
+            v.title = row['title_en']
+            v.abstract = row['abstract_en']
+            v.save()
+            print 'Successfully updated layer %s' % name
+        else:
+            print 'Layer not found: %s' % str(name)
 
 if __name__ == '__main__':
     import sys
