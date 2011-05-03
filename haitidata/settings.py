@@ -6,8 +6,8 @@ import geonode
 _ = lambda x: x
 
 DEBUG = True
-SITENAME = "GeoNode"
-SITEURL = "http://localhost:8000/"
+SITENAME = "HaitiData"
+SITEURL = "http://haitidata.org/"
 TEMPLATE_DEBUG = DEBUG
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -20,7 +20,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'sqlite3'
-DATABASE_NAME = os.path.join(PROJECT_ROOT,"..","..","..","development.db")
+DATABASE_NAME = os.path.join(PROJECT_ROOT,"development.db")
 DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Not used with sqlite3.
