@@ -95,6 +95,5 @@ def metadata():
     """Update the metadata in batch from a excel file
     """
     put('haitimetadata.xls', 'haitimetadata.xls')
-    run('pip install xlrd')
-    
-    print 'good'
+    run('source venv/bin/activate; pip install xlrd')
+    run('source venv/bin/activate; python haitidata/scripts/metadata.py haitimetadata.xls')
