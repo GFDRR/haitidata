@@ -32,6 +32,13 @@ fi
 
 echo ">>>> Activating the virtualenv"
 source venv/bin/activate
+
+if grep -q DJANGO_SETTINGS_MODULE venv/bin/activate
+then
+    echo
+else
+    echo 'export DJANGO_SETTINGS_MODULE=haitidata.settings' >> venv/bin/activate
+
 pip install downloaded/geonode-dependencies.pybundle
 
 function checkup() {
@@ -59,3 +66,5 @@ checkup GFDRR-Labs/haitidata.git haitidata
 cd haitidata
 python setup.py develop
 popd
+
+pip install fabric
