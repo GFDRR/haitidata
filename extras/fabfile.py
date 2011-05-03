@@ -21,8 +21,6 @@ def production():
     sudo('a2dissite geonode')
     sudo('a2ensite haitidata')
     run('mkdir -p logs')
-    #FIXME: Get rid of the need for geoserver_token
-    run('echo hola >> geoserver_token')
     restart()
 
 def manual():
