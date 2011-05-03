@@ -1,3 +1,4 @@
 django-rosetta
 django-flatblocks
 django-modeltranslation
+http://pypi.python.org/packages/source/d/django-staticfiles/django-staticfiles-0.3.4.tar.gz

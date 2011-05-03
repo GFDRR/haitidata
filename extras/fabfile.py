@@ -22,7 +22,7 @@ def production():
     sudo('a2ensite haitidata')
     run('mkdir -p logs')
     pull()
-    run('source venv/bin/activate; pip install http://pypi.python.org/packages/source/d/django-staticfiles/django-staticfiles-0.3.4.tar.gz#md5=9be20edefbe4b1a654907d805dbf7f0f')
+    run('source venv/bin/activate; pip install -r haitidata/extras/requirements.txt')
     run('rm -rf haitidata/haitidata/site_media')
     run('source venv/bin/activate;django-admin.py build_static --noinput')
     run('cd haitidata/haitidata/site_media/static; wget -c http://dev.geonode.org/dev-data/geonode-client.zip; unzip geonode-client.zip')
