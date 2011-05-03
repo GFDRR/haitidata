@@ -38,6 +38,7 @@ then
     echo
 else
     echo 'export DJANGO_SETTINGS_MODULE=haitidata.settings' >> venv/bin/activate
+fi
 
 pip install downloaded/geonode-dependencies.pybundle
 
@@ -66,3 +67,5 @@ checkup GFDRR-Labs/haitidata.git haitidata
 cd haitidata
 python setup.py develop
 popd
+
+pip install fabric
