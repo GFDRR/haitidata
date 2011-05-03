@@ -90,3 +90,11 @@ def log():
     GEOSERVER_LOG = 'tomcat/webapps/geoserver-geonode-dev/data/logs/geoserver.log'
     run('tail logs/*')
     run('tail -n 50 %s' % GEOSERVER_LOG)
+
+def metadata():
+    """Update the metadata in batch from a excel file
+    """
+    put('haitimetadata.xls', 'haitimetadata.xls')
+    run('pip install xlrd')
+    
+    print 'good'
