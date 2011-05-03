@@ -2,11 +2,17 @@ from excel import ExcelDictReader
 from geonode.maps.models import Layer
 from decimal import Decimal
 
+MAX_LAYERS=
+
 def update(filename):
     reader = ExcelDictReader(filename, 0, 11, 12)
     layer_names = Layer.objects.values_list('name', flat=True)
     for row in reader:
         name = row['layer_name']
+
+        if row['layer_ref'] is None:
+            sys.exit()
+
         if name in layer_names and type(name) is basestring:
             v = Layer.objects.get(name=name)
             v.title = row['title_en']
