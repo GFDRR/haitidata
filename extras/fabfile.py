@@ -21,10 +21,14 @@ def production():
     sudo('a2dissite geonode')
     sudo('a2ensite haitidata')
     run('mkdir -p logs')
+    pull()
     run('source venv/bin/activate; pip install http://pypi.python.org/packages/source/d/django-staticfiles/django-staticfiles-0.3.4.tar.gz#md5=9be20edefbe4b1a654907d805dbf7f0f')
     run('cp -rf /home/ubuntu/geonode/src/GeoNodePy/geonode/media/ /home/ubuntu/geonode/src/GeoNodePy/geonode/maps/')
     run('source venv/bin/activate;django-admin.py build_static --noinput')
-    restart()
+    run('cd haitidata/haitidata/site_media/static; wget -c http://dev.geonode.org/dev-data/geonode-client.zip; unzip geonode-client.zip')
+    #FIXME: Override geonode theme by copying the haitidata folder into theme
+    run('cp -rf haitidata/haitidata/media/haitidata/* haitidata/haitidata/site_media/static/theme')
+
 
 def manual():
     """Manual steps, not everything can be automated, but we try.

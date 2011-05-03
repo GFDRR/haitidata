@@ -263,8 +263,7 @@ REGISTRATION_OPEN = False
 
 SERVE_MEDIA = DEBUG;
 
-#GEONODE_CLIENT_LOCATION = "http://localhost:8001/geonode-client/"
-GEONODE_CLIENT_LOCATION = "/media/static/"
+GEONODE_CLIENT_LOCATION = "/media/"
 
 try:
     from local_settings import *
