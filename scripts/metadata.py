@@ -8,12 +8,12 @@ def update(filename):
     for row in reader:
         name = row['layer_name']
         if name not in layer_names:
-            print 'Layer not found: %s' % layer_name
+            print 'Layer not found: %s' % name
             continue
-        v = Layer.objects.filter(name=row['layer_name']).update(
+        v = Layer.objects.filter(name=name).update(
                                  title = row['title_en'],
                                  abstract = row['abstract_en'],
-                                    )
+                                )
 
 if __name__ == '__main__':
     import sys
