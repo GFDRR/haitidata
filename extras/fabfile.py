@@ -1,7 +1,7 @@
 from fabric.api import run, sudo, put, env
 
 # Edit this section if you get tired of writing the parameters on the command line
-env.hosts = ['ubuntu@ec2-67-202-8-230.compute-1.amazonaws.com']
+env.hosts = ['ubuntu@haitidata.org']
 env.key_filename = 'geonode-gfdrr-labs.pem'
 
 def install():
