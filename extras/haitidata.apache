@@ -28,7 +28,12 @@ WSGIDaemonProcess haitidata user=ubuntu threads=1 processes=5 python-path=/home/
    WSGIApplicationGroup %{GLOBAL}
    WSGIScriptAlias / /home/ubuntu/haitidata/extras/project.wsgi
    WSGIPassAuthorization On
-  
+ 
+   <Proxy *>
+       Order allow,deny
+       Allow from all
+   </Proxy>
+ 
    ProxyPass /geoserver-geonode-dev http://localhost:8080/geoserver-geonode-dev
    ProxyPassReverse /geoserver-geonode-dev http://localhost:8080/geoserver-geonode-dev
    ProxyPass /geonetwork http://localhost:8080/geonetwork/
