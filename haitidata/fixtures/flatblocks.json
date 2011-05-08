@@ -3,11 +3,8 @@
         "pk": 1, 
         "model": "flatblocks.flatblock", 
         "fields": {
-            "content_fr": null, 
-            "content_en": "Welcome to Haiti Data", 
             "content": "Welcome to Haiti Data", 
             "header": "", 
-            "content_es": null, 
             "slug": "index.intro.title"
         }
     }, 
@@ -15,11 +12,8 @@
         "pk": 2, 
         "model": "flatblocks.flatblock", 
         "fields": {
-            "content_fr": "Le but de ce site est de faciliter l\u2019acc\u00e8s libre \u00e0 de l\u2019information, des donn\u00e9es et des connaissances g\u00e9ospatiales, sur les hazard naturels et sur la vuln\u00e9rabilit\u00e9 et le risque en Ha\u00efti, ainsi que d\u2019encourager leur partage et leur utilisation. Les donn\u00e9es g\u00e9ospatiales peuvent \u00eatre utilis\u00e9es \u00e0 plusieurs fins : l\u2019\u00e9tablissement de donn\u00e9es de base, l\u2019\u00e9laboration d\u2019\u00e9valuations des risques, la planification, la surveillance de projets et le suivi de leur avancement. L\u2019acc\u00e8s \u00e0 de l\u2019information de haute qualit\u00e9 est critique pour les planificateurs, les d\u00e9cideurs et autres intervenants impliqu\u00e9s dans la reconstruction d\u2019Ha\u00efti. Ce site vise \u00e0 faciliter un support plus efficace \u00e0 la r\u00e9habilitation, le redressement et le d\u00e9veloppement durable \u00e0 long terme du pays.\r\n\r\n</p> Suite au tremblement de terre du 12 janvier 2010, une quantit\u00e9 substantielle de donn\u00e9es g\u00e9ospatiales a \u00e9t\u00e9 cr\u00e9\u00e9e, permettant d\u2019\u00e9valuer l\u2019intensit\u00e9 du s\u00e9isme, la probabilit\u00e9 d\u2019inondations, les risques associ\u00e9s aux glissements de terrain et aux tsunamis ainsi que les dommages, de fa\u00e7on globale. L\u2019\u00e9normit\u00e9 du besoin actuel en assistance mat\u00e9rielle, en support pour le renforcement de la structure de gouvernance ainsi que la quantit\u00e9 innombrable d\u2019organisations locales et internationales se joignant dans l\u2019assistance aux processus de reconstruction et de d\u00e9veloppement, posent \u00e9galement un d\u00e9fi consid\u00e9rable \u00e0 la capacit\u00e9 du gouvernement et des autres mandataires \u00e0 se coordonner, afin que le peuple d\u2019Ha\u00efti en b\u00e9n\u00e9ficie. Ce site souhaite aider \u00e0 informer les d\u00e9cideurs \u00e0 tous les niveaux et dans tous les secteurs, dans l\u2019imm\u00e9diat ainsi que dans la planification de l\u2019avenir, incluant la gestion du risque d\u00e9riv\u00e9 des hazard naturels.\r\n", 
-            "content_en": "The purpose of this site is to facilitate open access to Haiti-related geo-spatial information, data and knowledge products, and to encourage others to share and use them. Geospatial data can be used for many purposes: establishing baseline data, conducting risk assessments, planning, project monitoring, and tracking progress. Access to high quality information is critical for planners, policy makers, and other stakeholders involved in the reconstruction process in Haiti. This site is intended to facilitate more effective support to the country\u2019s rehabilitation, recovery and longer- term sustainable development.\r\n\r\n</p> Following the January 12, 2010 earthquake a large amount of geo-spatial data was created, noting information including earthquake intensity, flooding likelihood, landslide and tsunami hazards, and overall damage. The enormity of the current need for material assistance, support to reinforce the governance structure, and innumerable international and local organizations joining to assist in reconstruction and development processes, also poses a significant challenge to the government and other agent\u2019s ability to coordinate to benefit the people of Haiti. This site hopes to help inform decision makers at all levels and in all sectors, for now and in planning for the future, including to manage the risk derived from natural hazards.\r\n", 
             "content": "The purpose of this site is to facilitate open access to Haiti-related geo-spatial information, data and knowledge products, and to encourage others to share and use them. Geospatial data can be used for many purposes: establishing baseline data, conducting risk assessments, planning, project monitoring, and tracking progress. Access to high quality information is critical for planners, policy makers, and other stakeholders involved in the reconstruction process in Haiti. This site is intended to facilitate more effective support to the country\u2019s rehabilitation, recovery and longer- term sustainable development.\r\n\r\n</p> Following the January 12, 2010 earthquake a large amount of geo-spatial data was created, noting information including earthquake intensity, flooding likelihood, landslide and tsunami hazards, and overall damage. The enormity of the current need for material assistance, support to reinforce the governance structure, and innumerable international and local organizations joining to assist in reconstruction and development processes, also poses a significant challenge to the government and other agent\u2019s ability to coordinate to benefit the people of Haiti. This site hopes to help inform decision makers at all levels and in all sectors, for now and in planning for the future, including to manage the risk derived from natural hazards.\r\n", 
             "header": "", 
-            "content_es": null, 
             "slug": "index.intro"
         }
     }, 
@@ -27,11 +21,8 @@
         "pk": 3, 
         "model": "flatblocks.flatblock", 
         "fields": {
-            "content_fr": null, 
-            "content_en": "Explore Maps", 
             "content": "Explore Maps", 
             "header": "", 
-            "content_es": null, 
             "slug": "index.maps.title"
         }
     }, 
@@ -39,11 +30,8 @@
         "pk": 4, 
         "model": "flatblocks.flatblock", 
         "fields": {
-            "content_fr": "<strong>Explorez</strong> des cartes pr\u00e9-\u00e9labor\u00e9es ainsi que celles t\u00e9l\u00e9charg\u00e9es sur le serveur par d\u2019autres utilisateurs portant sur l\u2019intensit\u00e9 de s\u00e9ismes, les risques d\u2019inondations, la topographie, les r\u00e9seaux routiers, les abris pour r\u00e9fugi\u00e9s et les installations m\u00e9dicales ou sanitaires en place, et plus encore. </p><strong>Cr\u00e9ez votre propre carte </strong>En utilisant les m\u00eames donn\u00e9es brutes utilis\u00e9es pour la cr\u00e9ation d\u2019autres cartes sur le site, Ha\u00eftiData vous permet de cr\u00e9er et de partager vos propres cartes. Cr\u00e9ez une carte avec notre outil de cartographie afin de d\u00e9velopper des connaissances plus approfondies et de faire le suivi des changements au fil du temps. Sauvegardez, imprimez et partagez ces cartes si vous le d\u00e9sirez!", 
-            "content_en": "<strong>Explore</strong> pre-made maps and those uploaded by others on such things as earthquake intensity, flood hazards, topography, road networks, current refugee shelters and health facilities, and much more. </p><strong>Create your own map</strong> using the same raw data used to create other maps on the site, Haiti Data lets you compose and share your own maps. Create a map with our cartography tool to develop new insights and track changes over time. Save, print and share these maps if you wish!", 
             "content": "<strong>Explore</strong> pre-made maps and those uploaded by others on such things as earthquake intensity, flood hazards, topography, road networks, current refugee shelters and health facilities, and much more. </p><strong>Create your own map</strong> using the same raw data used to create other maps on the site, Haiti Data lets you compose and share your own maps. Create a map with our cartography tool to develop new insights and track changes over time. Save, print and share these maps if you wish!", 
             "header": "", 
-            "content_es": null, 
             "slug": "index.maps"
         }
     }, 
@@ -51,11 +39,8 @@
         "pk": 5, 
         "model": "flatblocks.flatblock", 
         "fields": {
-            "content_fr": null, 
-            "content_en": "Search for Data", 
             "content": "Search for Data", 
             "header": "", 
-            "content_es": null, 
             "slug": "index.data.title"
         }
     }, 
@@ -63,11 +48,8 @@
         "pk": 6, 
         "model": "flatblocks.flatblock", 
         "fields": {
-            "content_fr": "Ha\u00eftiData vous permet de t\u00e9l\u00e9charger des donn\u00e9es g\u00e9ospatiales sur le serveur ainsi que de les g\u00e9rer et les explorer. Recherchez les donn\u00e9es qui vous sont d\u2019int\u00e9r\u00eat \u2013 dans un certain nombre de formats g\u00e9ospatiaux \u2013 ou t\u00e9l\u00e9chargez vos donn\u00e9es sur le serveur afin de cr\u00e9er votre propre carte sur ce site.\r\n", 
-            "content_en": "Haiti Data lets you upload, manage, and browse geospatial data. Search for data that is valuable to you- in a number of geospatial formats- or upload you own data for use in creating your own map on this site.", 
             "content": "Haiti Data lets you upload, manage, and browse geospatial data. Search for data that is valuable to you- in a number of geospatial formats- or upload you own data for use in creating your own map on this site.", 
             "header": "", 
-            "content_es": null, 
             "slug": "index.data"
         }
     }, 
@@ -75,11 +57,8 @@
         "pk": 7, 
         "model": "flatblocks.flatblock", 
         "fields": {
-            "content_fr": null, 
-            "content_en": null, 
             "content": "Search <span class=\"subtitle\">for geospatial data</span>", 
             "header": "", 
-            "content_es": null, 
             "slug": "data.search.title"
         }
     }, 
@@ -87,11 +66,8 @@
         "pk": 8, 
         "model": "flatblocks.flatblock", 
         "fields": {
-            "content_fr": null, 
-            "content_en": null, 
             "content": "Upload", 
             "header": "", 
-            "content_es": null, 
             "slug": "data.upload.title"
         }
     }, 
@@ -99,11 +75,8 @@
         "pk": 9, 
         "model": "flatblocks.flatblock", 
         "fields": {
-            "content_fr": null, 
-            "content_en": null, 
             "content": "We support Shapefiles and Geotiffs <a class=\"layer-upload-link\" href=\"/data/upload/\">Upload a new layer</a>", 
             "header": "", 
-            "content_es": null, 
             "slug": "data.upload"
         }
     }, 
@@ -111,11 +84,8 @@
         "pk": 10, 
         "model": "flatblocks.flatblock", 
         "fields": {
-            "content_fr": null, 
-            "content_en": null, 
             "content": "Search<span class=\"subtitle\">for maps</span>", 
             "header": "", 
-            "content_es": null, 
             "slug": "maps.search.title"
         }
     }, 
@@ -123,11 +93,8 @@
         "pk": 11, 
         "model": "flatblocks.flatblock", 
         "fields": {
-            "content_fr": null, 
-            "content_en": null, 
             "content": "Create Maps", 
             "header": "", 
-            "content_es": null, 
             "slug": "maps.create.title"
         }
     }, 
@@ -135,11 +102,8 @@
         "pk": 12, 
         "model": "flatblocks.flatblock", 
         "fields": {
-            "content_fr": null, 
-            "content_en": null, 
             "content": "Use GeoNode's Map Composer application to create your own maps.  Add layers from this GeoNode or remote services, and style them.", 
             "header": "", 
-            "content_es": null, 
             "slug": "maps.create"
         }
     }, 
@@ -147,11 +111,8 @@
         "pk": 13, 
         "model": "flatblocks.flatblock", 
         "fields": {
-            "content_fr": null, 
-            "content_en": null, 
             "content": "Powered by <a href=\"http://geonode.org\">GeoNode</a>\r\n| <strong>Need Help?</strong>\r\n <a href=\"/help\">Help</a>\r\n| <a href=\"/developer\">For Developers</a>\r\n", 
             "header": "", 
-            "content_es": null, 
             "slug": "footer"
         }
     }, 
@@ -159,11 +120,8 @@
         "pk": 14, 
         "model": "flatblocks.flatblock", 
         "fields": {
-            "content_fr": null, 
-            "content_en": "Create your own map", 
             "content": "Create your own map", 
             "header": "", 
-            "content_es": null, 
             "slug": "index.createmap.title"
         }
     }
