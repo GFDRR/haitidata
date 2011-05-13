@@ -152,18 +152,7 @@
 <p> <strong>{% trans "Abstract" %}:</strong> {{ layer.abstract|default:_("No abstract for this layer.") }} </p>
 
 <div id="preview_map"></div>
-
-{% if layer.display_type %}<p> <strong>{% trans "Type" %}:</strong> {{ layer.display_type }} </p>{% endif %}
-{% if layer.keywords %}<p> <strong>{% trans "Keywords" %}:</strong> {{ layer.keywords }}</p>{% endif %}
-{% if layer.edition %}<p> <strong>{% trans "Edition" %}:</strong> {{ layer.edition }}</p>{% endif %}
-{% if layer.topic_category %}<p> <strong>{% trans "Topic Category" %}:</strong> {{ layer.topic_category }}</p>{% endif %}
-
-{% if layer.constraints_use or layer.constraints_other %}
-<p> <strong>{% trans "Citation" %}:</strong> 
-    {{ layer.constraints_use}} {{ layer.contraints_other}}
-</p>
-{% endif %}
-
+<p>&nbsp;</p>
 {% if layer.owner %}
 <p> <strong>{% trans "Owner" %}:</strong>
     <a href="{{ layer.owner.get_profile.get_absolute_url }}"> {{ layer.owner.username }} </a>: {{ layer.owner.first_name }} {{layer.owner.last_name }} ({{layer.owner.email}})
@@ -200,6 +189,17 @@
 {% if layer.supplemental_information %}
 <p> <strong>{% trans "Supplemental Information" %}:</strong> 
     {{ layer.supplemental_information }}
+</p>
+{% endif %}
+
+{% if layer.display_type %}<p> <strong>{% trans "Type" %}:</strong> {{ layer.display_type }} </p>{% endif %}
+{% if layer.keywords %}<p> <strong>{% trans "Keywords" %}:</strong> {{ layer.keywords }}</p>{% endif %}
+{% if layer.edition %}<p> <strong>{% trans "Edition" %}:</strong> {{ layer.edition }}</p>{% endif %}
+{% if layer.topic_category %}<p> <strong>{% trans "Topic Category" %}:</strong> {{ layer.topic_category }}</p>{% endif %}
+
+{% if layer.constraints_use or layer.constraints_other %}
+<p> <strong>{% trans "Citation" %}:</strong> 
+    {{ layer.constraints_use}} {{ layer.contraints_other}}
 </p>
 {% endif %}
 
