@@ -166,7 +166,7 @@
 
 {% if layer.owner %}
 <p> <strong>{% trans "Owner" %}:</strong>
-    <a href="{{ layer.owner.get_profile.get_absolute_url }}"> {{ layer.owner.username }} </a>: {{ layer.owner.firstname }} {{layer.owner.lastname }}
+    <a href="{{ layer.owner.get_profile.get_absolute_url }}"> {{ layer.owner.username }} </a>: {{ layer.owner.first_name }} {{layer.owner.last_name }} ({{layer.owner.email}})
 </p>
 {% endif %}
 
