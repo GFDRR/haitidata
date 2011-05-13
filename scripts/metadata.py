@@ -13,9 +13,11 @@ def update(filename):
 
         if name in layer_names and type(name) is basestring:
             v = Layer.objects.get(name=name)
-            v.title = row['title_en']
-            v.abstract = row['abstract_en']
-            v.save()
+            v.supplemental_information= row['attribut_values']
+            print v.supplemental_information
+#            v.title = row['title_en']
+#            v.abstract = row['abstract_en']
+#            v.save()
             print 'Successfully updated layer %s' % name
         else:
             print 'Layer not found: %s' % str(name)
