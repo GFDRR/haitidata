@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     (r'^(?:index/?)?$', 'geonode.views.index'),
     (r'^(?P<page>help)/?$', 'geonode.views.static'),
     (r'^developer/?$', 'geonode.views.developer'),
-    ('^termsofuse/$', direct_to_template, {  'template': 'termsofuse.html' })
+    ('^termsofuse/$', direct_to_template, {  'template': 'termsofuse.html' }),
     (r'^lang\.js$', 'geonode.views.lang'),
     (r'^maps/', include('geonode.maps.urls')),
     (r'^proxy/', 'geonode.proxy.views.proxy'),
