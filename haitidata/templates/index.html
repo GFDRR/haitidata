@@ -10,9 +10,24 @@
 {% include "geonode/ext_header.html" %}
 {{ block.super }}
 <script type="text/javascript">
+
+    function showHide(shID) {
+        if (document.getElementById(shID)) {
+                if (document.getElementById(shID+'-show').style.display != 'none') {
+                            document.getElementById(shID+'-show').style.display = 'none';
+                                    document.getElementById(shID).style.display = 'block';
+                                        }
+                    else {
+                                document.getElementById(shID+'-show').style.display = 'inline';
+                                        document.getElementById(shID).style.display = 'none';
+                                            }
+                    }
+    }
+    
 Ext.onReady(function(){
 {% autoescape off %}
-
+  showHide('example');
+  showHide('example');
   var exploreMapButton = new Ext.Button({
      renderTo: 'explore_map', 
      text: '{% trans "Explore Maps" %}',
@@ -43,23 +58,29 @@ Ext.onReady(function(){
 <div class="twocol">
 <!-- TODO: i18n on the text here -->
   <div class="block">
-    <h2> {% flatblock "index.intro.title"  %}</h2>
+	   <img align=right style="border:2px solid #008CB3; margin=5px;"  src='{{STATIC_URL}}/haitidata/img/haiti.jpg'>
     <p>
        {% flatblock "index.intro" %}
   </p>
   </div>
   <div class="block">
-    <h2>{% flatblock "index.maps.title" %}</h2>
     <p>
        {% flatblock "index.maps" %}
   </p>
     <div class="selfclear">
       <div id="explore_map" class="content-button"></div>
+    </div>
+</div>
+  <div class="block">
+    <p>
+       {% flatblock "index.create" %}
+  </p>
+    <div class="selfclear">
       <div id="create_map" class="content-button"></div>
     </div>
-  </div>
+</div>
+
   <div id="data_block" class="block">
-    <h2> {% flatblock "index.data.title" %}</h2>
     <p>
        {% flatblock "index.data" %}
     </p>
@@ -86,7 +107,4 @@ Ext.onReady(function(){
     <a class="layer-upload-link" href="{% url geonode.maps.views.upload_layer%}">{% trans "Upload data"  %}</a>
   </div>
 </div>
-{% endblock %}
-{% block sidebar %}
-	<p><img src='{{STATIC_URL}}/haitidata/img/haiti.jpg'></p>
 {% endblock %}

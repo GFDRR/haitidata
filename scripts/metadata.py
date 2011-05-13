@@ -11,7 +11,7 @@ def update(filename):
         if row['layer_ref'] is None:
             sys.exit()
 
-        if name in layer_names and type(name) is basestring:
+        if name in layer_names:
             v = Layer.objects.get(name=name)
             v.supplemental_information= row['attribut_values']
             print v.supplemental_information
@@ -20,7 +20,7 @@ def update(filename):
 #            v.save()
             print 'Successfully updated layer %s' % name
         else:
-            print 'Layer not found: %s' % str(name)
+            print '%s' % str(name)
 
 if __name__ == '__main__':
     import sys
