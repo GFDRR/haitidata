@@ -19,8 +19,10 @@ def install():
     """
     run('wget https://github.com/GFDRR-Labs/haitidata/raw/master/scripts/haitidata-install')
     run('bash haitidata-install')
-#    run('echo "source ~/venv/bin/activate" >> .bash_aliases')
-#    run('echo "export DJANGO_SETTINGS_MODULE=haitidata.settings" >> .bash_aliases')
+    run('echo "source ~/venv/bin/activate" >> .bash_aliases')
+    run('echo "export DJANGO_SETTINGS_MODULE=haitidata.settings" >> .bash_aliases')
+    run('rm haitidata-install')
+    run('rm distribute*')
 
 def production():
     """Install and configure Apache and Tomcat
@@ -106,6 +108,15 @@ def dns():
     """
     sudo('rm /etc/resolv.conf')
     sudo('echo "nameserver 4.2.2.2" >> /etc/resolv.conf')
+
+def ariel():
+    """Setup dev env for Ariel
+    """
+    put('id_rsa', '.ssh/id_rsa')
+    put('id_rsa.pub', '.ssh/id_rsa.pub')
+    run('git config --global user.name "Ariel Nunez"')
+    run('git config --global user.email ingenieroariel@gmail.com')
+
 
 def metadata():
     """Update the metadata in batch from a excel file

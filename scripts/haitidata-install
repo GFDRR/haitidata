@@ -10,6 +10,7 @@ cd downloaded
 wget -c "https://s3.amazonaws.com/geonodeariel/geoserver-geonode-dev.war"
 wget -c "https://s3.amazonaws.com/geonodeariel/geonetwork.war"
 wget -c "https://s3.amazonaws.com/geonodeariel/tomcat.zip"
+wget -c "https://s3.amazonaws.com/geonodeariel/geonode-client.zip"
 cd ..
 
 if [ ! -d "./tomcat" ]; then
@@ -57,7 +58,7 @@ checkup GeoNode/geonode.git geonode
 pushd .
 cd geonode
 git checkout synth
-pip install -r shared/dev-libs.txt
+pip install -r shared/core-libs.txt
 cd src/GeoNodePy
 python setup.py develop
 popd
