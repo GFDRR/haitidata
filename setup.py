@@ -21,6 +21,7 @@ setup(
     url='https://github.com/GFDRR-Labs/haitidata',
     scripts = [
                'scripts/haitidata-start',
+               'scripts/haitidata-stop',
               ],
     packages=find_packages('.'),
     include_package_data=True,
