@@ -17,10 +17,10 @@ def haitidataorg():
 def install():
     """Install RISIKO and it's dependencies
     """
-    sudo('apt-get install -y curl python-virtualenv')
-    run('curl https://github.com/GFDRR-Labs/haitidata/raw/master/scripts/haitidata-install | bash')
-    run('echo "source ~/venv/bin/activate" >> .bash_aliases')
-    run('echo "export DJANGO_SETTINGS_MODULE=haitidata.settings" >> .bash_aliases')
+    run('wget https://github.com/GFDRR-Labs/haitidata/raw/master/scripts/haitidata-install')
+    run('bash haitidata-install')
+#    run('echo "source ~/venv/bin/activate" >> .bash_aliases')
+#    run('echo "export DJANGO_SETTINGS_MODULE=haitidata.settings" >> .bash_aliases')
 
 def production():
     """Install and configure Apache and Tomcat
@@ -105,7 +105,7 @@ def dns():
     """Useful when default DNS does not work
     """
     sudo('rm /etc/resolv.conf')
-    sudo('echo "nameserver 4.2.2.2" >> /etc/resolv.conf'
+    sudo('echo "nameserver 4.2.2.2" >> /etc/resolv.conf')
 
 def metadata():
     """Update the metadata in batch from a excel file
