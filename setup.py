@@ -20,8 +20,7 @@ setup(
     keywords="haitidata geonode django",
     url='https://github.com/GFDRR-Labs/haitidata',
     scripts = [
-               'scripts/haitidata-start',
-               'scripts/haitidata-stop',
+               'scripts/haitidata',
               ],
     packages=find_packages('.'),
     include_package_data=True,

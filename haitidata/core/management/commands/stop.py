@@ -5,6 +5,23 @@
 import os, time
 from subprocess import Popen, PIPE
 
+import os
+import subprocess
+
+from django.core.management.base import CommandError, NoArgsCommand
+
+class Command(NoArgsCommand):
+    can_import_settings = True
+
+    def handle_noargs(self, **options):
+ 
+        # Kill GeoServer
+        kill('tomcat', 'java')
+
+        # Kill Django
+        kill('paster', 'project.paste')
+   
+
 def kill(arg1, arg2):
     """Stops a proces that contains arg1 and is filtered by arg2
     """
@@ -43,10 +60,4 @@ def kill(arg1, arg2):
         raise Exception('Could not stop %s: '
                         'Running processes are\n%s'
                         % (arg1, '\n'.join([l.strip() for l in lines])))
-
-# Kill GeoServer
-kill('tomcat', 'java')
-
-# Kill Django
-kill('paster', 'project.paste')
 
