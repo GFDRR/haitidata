@@ -8,14 +8,15 @@ Following the January 12, 2010 earthquake a large amount of geo-spatial data was
 INSTALLATION
 ------------
 
-1.) Install GeoNode from the Ubuntu packages (assuming you have enabled the OpenGeo repo)
-    sudo apt-get install geonode
+Assumes you have a Ubuntu machine later than 10.04::
 
-2.) Activate GeoNode's virtual environment and install this package in editable mode:
-    source /var/www/geonode/wsgi/geonode/bin/activate
-    pip install -e git+https://github.com/GFDRR-Labs/haitidata#egg=haitidata
+wget https://github.com/GFDRR-Labs/haitidata/raw/master/scripts/haitidata-install
+bash haitidata-install
+source venv/bin/activate
+haitidata syncdb
+haitidata start
 
-3.) In geonode.wsgi change the reference from geonode.settings to haitidata.settings
+# Navigate to http://localhost:8000
 
-4.) Reload Apache:
-    sudo service apache2 reload
+# To stop it do:
+haitidata stop
