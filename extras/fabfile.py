@@ -21,6 +21,7 @@ def install():
     run('bash haitidata-install')
     run('echo "source ~/venv/bin/activate" >> .bash_aliases')
     run('echo "export DJANGO_SETTINGS_MODULE=haitidata.settings" >> .bash_aliases')
+    run('echo "export HAITIDATA_HOME=\"pwd ~\"" >> .bash_aliases')
     run('rm haitidata-install')
     run('rm distribute*')
 

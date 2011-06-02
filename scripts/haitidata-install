@@ -64,6 +64,11 @@ python setup.py develop
 popd
 
 
+# After we have installed GeoNode we want to put geonode-client.zip in the right folder
+pushd .
+unzip downloaded/geonode-client.zip -d geonode/src/GeoNodePy/geonode/media/geonode
+popd
+
 echo ">>>> Installing this project in development mode"
 pushd .
 checkup GFDRR-Labs/haitidata.git haitidata
