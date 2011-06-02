@@ -10,6 +10,7 @@ cd downloaded
 wget -c "https://s3.amazonaws.com/geonodeariel/geoserver-geonode-dev.war"
 wget -c "https://s3.amazonaws.com/geonodeariel/geonetwork.war"
 wget -c "https://s3.amazonaws.com/geonodeariel/tomcat.zip"
+wget -c "https://s3.amazonaws.com/geonodeariel/geonode-client.zip"
 cd ..
 
 if [ ! -d "./tomcat" ]; then
