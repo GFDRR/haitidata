@@ -59,15 +59,17 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, "site_media", "media")
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = "/site_media/media/"
+MEDIA_URL = "/media/"
 
 # Absolute path to the directory that holds static files like app media.
 # Example: "/home/media/media.lawrence.com/apps/"
-STATIC_ROOT = os.path.join(PROJECT_ROOT, "site_media", "static")
+STATIC_ROOT = MEDIA_ROOT
 
 # URL that handles the static files like app media.
 # Example: "http://media.lawrence.com"
-STATIC_URL = "/media/"
+STATIC_URL = MEDIA_URL
+
+GEONODE_CLIENT_LOCATION = STATIC_URL + "geonode/"
 
 # Additional directories which hold static files
 STATICFILES_DIRS = [
@@ -269,7 +271,6 @@ TRANSLATION_REGISTRY = "haitidata.translation"
 
 SERVE_MEDIA = DEBUG;
 
-GEONODE_CLIENT_LOCATION = "/media/"
 
 try:
     from local_settings import *
