@@ -1,8 +1,18 @@
-from fabric.api import run, sudo, put, env
+from fabric.api import env, local, run, sudo, put
+  
+def vagrant():
+    # change from the default user to 'vagrant'
+    env.user = 'vagrant'
+    # connect to the port-forwarded ssh
+    env.hosts = ['127.0.0.1:2222']
 
-# Edit this section if you get tired of writing the parameters on the command line
-env.hosts = ['ubuntu@haitidata.org']
-env.key_filename = 'geonode-gfdrr-labs.pem'
+    # use vagrant ssh key
+    result = local('vagrant ssh_config | grep IdentityFile', capture=True)
+    env.key_filename = result.split()[1]
+
+def haitidataorg():
+    env.hosts = ['ubuntu@haitidata.org']
+    env.key_filename = 'geonode-gfdrr-labs.pem'
 
 def install():
     """Install RISIKO and it's dependencies
@@ -90,6 +100,12 @@ def log():
     GEOSERVER_LOG = 'tomcat/webapps/geoserver-geonode-dev/data/logs/geoserver.log'
     run('tail logs/*')
     run('tail -n 50 %s' % GEOSERVER_LOG)
+
+def dns():
+    """Useful when default DNS does not work
+    """
+    sudo('rm /etc/resolv.conf')
+    sudo('echo "nameserver 4.2.2.2" >> /etc/resolv.conf'
 
 def metadata():
     """Update the metadata in batch from a excel file
