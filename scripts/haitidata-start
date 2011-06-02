@@ -1,0 +1,4 @@
+$HAITIDATA_HOME/tomcat/bin/catalina.sh start
+django-admin.py syncdb --noinput
+paster serve --reload $HAITIDATA_HOME/haitidata/extras/project.paste.ini
+$HAITIDATA_HOME/tomcat/bin/catalina.sh stop

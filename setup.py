@@ -19,6 +19,9 @@ setup(
     license="GPL 3",
     keywords="haitidata geonode django",
     url='https://github.com/GFDRR-Labs/haitidata',
+    scripts = [
+               'scripts/haitidata-start',
+              ],
     packages=find_packages('.'),
     include_package_data=True,
     zip_safe=False,
