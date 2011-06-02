@@ -1,4 +1,6 @@
 $HAITIDATA_HOME/tomcat/bin/catalina.sh start
 django-admin.py syncdb --noinput
+echo "HaitiData site running in http://localhost:8000/"
+echo "If you want to stop it, please use 'Ctrl + C'"
 paster serve --reload $HAITIDATA_HOME/haitidata/extras/project.paste.ini
-$HAITIDATA_HOME/tomcat/bin/catalina.sh stop
+haitidata-stop
