@@ -65,17 +65,18 @@ MEDIA_URL = "/media/"
 
 # Absolute path to the directory that holds static files like app media.
 # Example: "/home/media/media.lawrence.com/apps/"
-STATIC_ROOT = MEDIA_ROOT
+STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
 
 # URL that handles the static files like app media.
 # Example: "http://media.lawrence.com"
-STATIC_URL = MEDIA_URL
+STATIC_URL = "/static/"
 
 GEONODE_CLIENT_LOCATION = STATIC_URL + "geonode/"
 
 # Additional directories which hold static files
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, "media"),
+    os.path.join(GEONODE_ROOT, "media"),
 ]
 
 GEONODE_UPLOAD_PATH = os.path.join(STATIC_URL, "upload/")
@@ -100,6 +101,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
+    "django.core.context_processors.static",
     "geonode.maps.context_processors.resource_urls",
 )
 

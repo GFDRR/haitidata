@@ -66,7 +66,8 @@ popd
 
 # After we have installed GeoNode we want to put geonode-client.zip in the right folder
 pushd .
-unzip downloaded/geonode-client.zip -d geonode/src/GeoNodePy/geonode/media/geonode
+mkdir -p geonode/src/GeoNodePy/geonode/maps/static
+unzip downloaded/geonode-client.zip -d geonode/src/GeoNodePy/geonode/maps/static/geonode
 popd
 
 echo ">>>> Installing this project in development mode"

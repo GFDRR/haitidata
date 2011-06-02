@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import *
 from django.conf import settings
-from staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls.static import static
 from django.views.generic.simple import direct_to_template
 
 # Uncomment the next two lines to enable the admin:
@@ -46,8 +47,4 @@ urlpatterns = patterns('',
     (r'^accounts/', include('registration.urls')),
     (r'^profiles/', include('profiles.urls')),
     (r'^rosetta/', include('rosetta.urls')),
-    )
-
-# Extra static file endpoint for development use
-if settings.SERVE_MEDIA:
-    urlpatterns += staticfiles_urlpatterns()
+    ) + staticfiles_urlpatterns()
