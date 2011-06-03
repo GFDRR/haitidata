@@ -2,13 +2,16 @@ import datetime
 
 from django.db.models.query import QuerySet, ValuesQuerySet
 from django.http import HttpResponse
-from geonode.maps.models import Layer
+from geonode.maps.models import Layer, Contact, Role, ContactRole
 import csv, StringIO
 
-def metadata(request, layer_list=None):
-    """Returns a excel file with all the layers
-    """
-    fields = ('id', 'name', 'title',
+CONTACT_FIELDS = (
+                  'id', 'name', 'organization', 'position', 'voice', 'fax',
+                   'delivery', 'city', 'area', 'zipcode', 'country', 'email',
+                    )
+
+LAYER_FIELDS = (
+              'id', 'name', 'title',
               'date', 'date_type', 'edition', 
               'abstract', #FIXME: Remove this one.
               'abstract_en', 'abstract_fr',
@@ -27,23 +30,56 @@ def metadata(request, layer_list=None):
               'distribution_description_en', 'distribution_description_fr',
               'data_quality_statement_en', 'data_quality_statement_fr',
              )
+
+
+def add_contact_info(layer, role):
+    """Queries the contact role table and adds the contact fields
+       to the given layer dictionary
+    """
+
+    contact = ContactRole.objects.get(role=role, layer__id = layer['id']).contact
+    for field in CONTACT_FIELDS:
+        layer['%s__%s' % (role.value, field)] = getattr(contact, field)
+    return layer
+
+def metadata(request, layer_list=None):
+    """Returns a excel file with all the layers
+    """
     layers = Layer.objects.all()
 
     if layer_list is not None:
         int_layer_list = [int(x) for x in layer_list.split(',')]
         layers = layers.filter(id__in=int_layer_list)
 
-    objs = layers.values(*fields).order_by('typename')
+    objs = layers.values(*LAYER_FIELDS).order_by('typename')
+
+    # Iterate over the list to annotate it with poc data and metadata_author data
+    pocrole =  Role.objects.get(value='pointOfContact')
+    authorrole = Role.objects.get(value='author')
+
+    annotated_objects = []
+    for layer in objs:
+        layer = add_contact_info(layer, pocrole)
+        layer = add_contact_info(layer, authorrole)
+        annotated_objects.append(layer)
+
     response = HttpResponse(mimetype='text/csv')
     sd = datetime.datetime.now()
     fname = '%s-%s.csv' % ('haitidata_layers', sd.strftime('%Y%m%d-%H%M-%s'))
     response['Content-Disposition'] = 'attachment; filename=%s' % fname
+     
+    header = []
+    header.extend(LAYER_FIELDS)
+    for contact in ['pointOfContact', 'author']:
+        for field in CONTACT_FIELDS:
+            header.append('%s__%s' % (contact, field))
 
-    writer = UnicodeDictWriter(response, fields)
+
+    writer = UnicodeDictWriter(response, header)
     header_writer = UnicodeWriter(response)
-    header_writer.writerows([fields])
+    header_writer.writerows([header])
 
-    writer.writerows(objs)
+    writer.writerows(annotated_objects)
 
     response._is_string = False
     return response
