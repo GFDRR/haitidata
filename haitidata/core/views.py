@@ -8,13 +8,25 @@ import csv, StringIO
 def excelview(request):
     """Returns a excel file with all the layers
     """
-    fields = ('id', 'name', 'title', 'abstract',
-                                      'abstract_en', 'abstract_fr',
-                                      'purpose_en', 'purpose_fr',
-                                      'constraints_other_en', 'constraints_other_fr',
-                                      'distribution_description_en', 'distribution_description_fr',
-                                      'data_quality_statement_en', 'data_quality_statement_fr',
-                                      )
+    fields = ('id', 'name', 'title',
+              'date', 'date_type', 'edition', 
+              'abstract', #FIXME: Remove this one.
+              'abstract_en', 'abstract_fr',
+              'purpose_en', 'purpose_fr',
+              'maintenance_frequency',
+              'keywords', 'keywords_region',
+              'constraints_use',
+              'constraints_other_en', 'constraints_other_fr',
+              'spatial_representation_type',
+              'language',
+              'topic_category',
+              'temporal_extent_start',
+              'temporal_extent_end',
+              'supplemental_information_en', 'supplemental_information_fr',
+              'distribution_url',
+              'distribution_description_en', 'distribution_description_fr',
+              'data_quality_statement_en', 'data_quality_statement_fr',
+             )
     objs = Layer.objects.all().values(*fields).order_by('typename')
     response = HttpResponse(mimetype='text/csv')
     sd = datetime.datetime.now()

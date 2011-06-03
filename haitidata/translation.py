@@ -16,6 +16,7 @@ class LayerTO(TranslationOptions):
              'constraints_other',
              'distribution_description',
              'data_quality_statement',
+             'supplemental_information',
              )
 
 
