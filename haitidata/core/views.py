@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from geonode.maps.models import Layer
 import csv, StringIO
 
-def excelview(request):
+def metadata(request, layer_list=None):
     """Returns a excel file with all the layers
     """
     fields = ('id', 'name', 'title',
@@ -27,7 +27,13 @@ def excelview(request):
               'distribution_description_en', 'distribution_description_fr',
               'data_quality_statement_en', 'data_quality_statement_fr',
              )
-    objs = Layer.objects.all().values(*fields).order_by('typename')
+    layers = Layer.objects.all()
+
+    if layer_list is not None:
+        int_layer_list = [int(x) for x in layer_list.split(',')]
+        layers = layers.filter(id__in=int_layer_list)
+
+    objs = layers.values(*fields).order_by('typename')
     response = HttpResponse(mimetype='text/csv')
     sd = datetime.datetime.now()
     fname = '%s-%s.csv' % ('haitidata_layers', sd.strftime('%Y%m%d-%H%M-%s'))
