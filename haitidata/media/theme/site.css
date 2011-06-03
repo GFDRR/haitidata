@@ -764,3 +764,20 @@ a.hideLink {
 
 a.showLink:hover, a.hideLink:hover {
         border-bottom: 1px dotted #36f; }
+
+.langbar {
+     margin-right: 150px;
+     right: 0;
+     position: absolute;
+     padding-top: 5px;
+}
+
+.langbar a {
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.langbar a:hover {
+   border-bottom: 1px dotted #36f; 
+}

@@ -32,7 +32,7 @@
   <div id="crossbar">
     <div class="wrap selfclear">             
       {% block nav %}
-    <ul id="sitenav" class="selfclear">
+    <ul id="sitenav">
         <li class="home"><a href="{% url geonode.views.index %}">Home</a></li> 
         <li class=""><a class="" id="dataLink" href="{% url geonode.maps.views.browse_data %}">Data</a></li>
         <li class=""><a class="" id="mapsLink" href="{% url geonode.maps.views.maps %}">Maps</a></li>
@@ -45,6 +45,21 @@
     {% endif %}
     </ul>
       {% endblock %}
+
+    {% get_current_language as LANGUAGE %}
+
+                                                                                                                         
+    <form class="langbar" id="target" action="/i18n/setlang/" method="post">
+      {% csrf_token %}
+       <div style="display: inline;">
+         <select id="langval" name="language" onchange="javascript:form.submit()">
+           {% for lang in LANGUAGES %}
+            <option value="{{ lang.0 }}"{% ifequal LANGUAGE_CODE lang.0 %} selected="selected"{% endifequal %}>{{ lang.1     }}</option>
+           {% endfor %}
+         </select>
+       </div>
+     </form>
+
     </div><!-- /.wrap -->
   </div><!-- /#crossbar -->
   <div id="main">

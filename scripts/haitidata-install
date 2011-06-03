@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt-get update
 sudo apt-get install -y --force-yes openjdk-6-jre-headless
-sudo apt-get install -y vim zip unzip subversion git-core binutils build-essential python-dev python-setuptools python-imaging python-reportlab gdal-bin libproj-dev libgeos-dev python-urlgrabber python-scipy python-nose pep8 python-virtualenv python-gdal python-pastescript
+sudo apt-get install -y vim zip unzip subversion git-core binutils build-essential python-dev python-setuptools python-imaging python-reportlab gdal-bin libproj-dev libgeos-dev python-urlgrabber python-scipy python-nose pep8 python-virtualenv python-gdal python-pastescript gettext
 
 
 echo ">>>> Downloading components required for installation."

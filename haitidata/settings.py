@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Django settings for GeoNode project.
 from urllib import urlencode
 import os
@@ -40,8 +41,8 @@ TIME_ZONE = 'America/Chicago'
 LANGUAGE_CODE = 'en'
 
 LANGUAGES = (
-    ('en', _('English')),
-    ('fr', _('French')),
+    ('en', 'English'),
+    ('fr', u'Français'),
 )
 
 SITE_ID = 1
