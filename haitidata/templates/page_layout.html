@@ -34,8 +34,8 @@
       {% block nav %}
     <ul id="sitenav" class="selfclear">
         <li class="home"><a href="{% url geonode.views.index %}">Home</a></li> 
-        <li class=""><a class="" id="dataLink" href="{% url geonode.maps.views.browse_data %}">Data</a></li>
-        <li class=""><a class="" id="mapsLink" href="{% url geonode.maps.views.maps %}">Maps</a></li>
+        <li class=""><a class="" id="dataLink" href="{% url geonode.maps.views.search_page %}">Data</a></li>
+        <li class=""><a class="" id="mapsLink" href="{% url maps_search %}">Maps</a></li>
     {% if user.is_authenticated %}
         <li class=""><a class="" id="profileLink" href="{% url profiles_profile_detail user.username %}">Profile</a></li>
     {% if user.is_staff %}
