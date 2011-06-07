@@ -34,12 +34,6 @@ Ext.onReady(function(){
      handler: function(){ window.location = "{% url geonode.maps.views.maps_search_page %}"; }
   });
 
-  var createMapButton = new Ext.Button({
-     renderTo: 'create_map', 
-     text: '{% trans "Create Map" %}',
-     handler: function(){ window.location = "{% url geonode.maps.views.newmap %}"; }
-  });
-
   var submitForm = function() {
       Ext.query('#data_block form')[0].submit();
   };
@@ -76,7 +70,8 @@ Ext.onReady(function(){
        {% flatblock "index.create" %}
   </p>
     <div class="selfclear">
-      <div id="create_map" class="content-button"></div>
+      <!div id="create_map" class="content-button"><!/div>
+      <a class="map-creating-link" href="{% url geonode.maps.views.newmap %}">{% trans "Create Map"  %}</a>
     </div>
 </div>
 
