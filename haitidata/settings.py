@@ -279,10 +279,18 @@ LOGGING = {
             'class':'logging.StreamHandler',
             'formatter': 'simple'
         },
+        'file':{
+            'level':'DEBUG',
+            'class' : 'logging.handlers.RotatingFileHandler',
+            'formatter': 'verbose',
+            'filename': 'haitidata.log',
+            'maxBytes': '1024',
+            'backupCount': '3',
+         },
         'mail_admins': {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler',
-        }
+        },
     },
     'loggers': {
         'django': {
@@ -296,9 +304,9 @@ LOGGING = {
             'propagate': False,
         },
         'geonode.maps': {
-            'handlers': ['console', 'mail_admins'],
+            'handlers': ['console', 'file'],
             'level': 'INFO',
-        }
+        },
     }
 }
 
