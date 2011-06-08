@@ -10,7 +10,7 @@ INSTALLATION
 
 Assumes you have a Ubuntu machine later than 10.04::
 
-wget https://github.com/GFDRR-Labs/haitidata/raw/master/scripts/haitidata-install
+wget https://github.com/GFDRR/haitidata/raw/master/scripts/haitidata-install
 bash haitidata-install
 source venv/bin/activate
 haitidata syncdb
