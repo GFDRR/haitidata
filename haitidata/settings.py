@@ -298,7 +298,6 @@ LOGGING = {
         'geonode.maps': {
             'handlers': ['console', 'mail_admins'],
             'level': 'INFO',
-            'filters': ['special']
         }
     }
 }
