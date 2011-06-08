@@ -294,7 +294,7 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers':['null'],
+            'handlers':['file'],
             'propagate': True,
             'level':'INFO',
         },
@@ -315,12 +315,14 @@ ABSOLUTE_URL_OVERRIDES = {
 }
 
 AUTH_PROFILE_MODULE = 'maps.Contact'
-REGISTRATION_OPEN = False
+REGISTRATION_OPEN = True
 
 MODELTRANSLATION_TRANSLATION_REGISTRY = "haitidata.translation"
 
 SERVE_MEDIA = DEBUG;
 
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = '/tmp/haitidata-messages' # change this to a proper location
 
 try:
     from local_settings import *
