@@ -269,12 +269,6 @@ LOGGING = {
             'format': '%(levelname)s %(message)s'
         },
     },
-    'filters': {
-        'special': {
-            '()': 'project.logging.SpecialFilter',
-            'foo': 'bar',
-        }
-    },
     'handlers': {
         'null': {
             'level':'DEBUG',
