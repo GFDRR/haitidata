@@ -1,4 +1,4 @@
-WSGIDaemonProcess haitidata user=%(user)s threads=1 processes=5 python-path=%(project_home)s/riab_env/lib/python2.6/site-packages
+WSGIDaemonProcess haitidata user=%(user)s threads=1 processes=5 python-path=%(project_home)s/venv/lib/python2.6/site-packages
 <VirtualHost *:80>
    ServerAdmin anunezgomez@worldbank.org
    ServerName %(host)s
