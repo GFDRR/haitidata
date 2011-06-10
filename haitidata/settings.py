@@ -8,7 +8,7 @@ _ = lambda x: x
 
 DEBUG = True
 SITENAME = "HaitiData"
-SITEURL = "http://haitidata.org/"
+SITEURL = "http://localhost:8000/"
 TEMPLATE_DEBUG = DEBUG
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -294,7 +294,7 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers':['file'],
+            'handlers':['null'],
             'propagate': True,
             'level':'INFO',
         },
@@ -303,8 +303,8 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': False,
         },
-        'geonode.maps': {
-            'handlers': ['console', 'file'],
+        'geonode': {
+            'handlers': ['console'],
             'level': 'INFO',
         },
     }
