@@ -56,36 +56,30 @@ Ext.onReady(function(){
 
 			<div id="left-box">
 				<div id="containerIII">
-					<h2>Open data and maps about Haiti</h2>
+					<h2>{% flatblock "titleI"%}</h2>
 					<ul style="font-size:130%">
-						<li>Explore 
+						<li>{% trans "Explore"%} 
 							<a href="{% url maps_search %}">{% trans "maps"%}</a>						
-							  and <a href="{% url geonode.maps.views.search_page %}">{% trans "data"%}</a> made by others
+							  {% trans "and"%} <a href="{% url geonode.maps.views.search_page %}">{% trans "data"%}</a> {% trans "made by others"%}
 						</li>
 						<li>						
 							<a href="{% url geonode.maps.views.newmap %}">{% trans "Create map"  %}</a>
-							for collaborating and sharing
+							{% trans "for collaborating and sharing"%}
 						</li>
 						<li>
 							<a href="{% url geonode.maps.views.upload_layer%}">{% trans "Upload data"  %}</a>
-							to use and share with others</li>
-						<li>Search and download data for use in other applications</li>
+							{% trans "to use and share with others"%}</li>
+						<li>{% trans "Search and download data for use in other applications"%}</li>
 					</ul>
 
 				<div>
 					<div style="float: left; width:350px">
-						<h2 >Featured Map</h2>						
+						<h2 >{%flatblock "featMap"%}</h2>						
 						<img align=left style="border:2px solid #008CB3;margin=5px;" src='{{STATIC_URL}}theme/img/haiti.png'>
-					<p style="clear:left; padding-left:70px; text-decoration:underline;">Haiti Landslide risk map</p>
+					{%flatblock "imgCaption"%}
 					</div>
 					<div>
-						<h2>Featured Data</h2>
-						<ul>
-							<li>Schools</li>
-							<li>Refugee shelters</li>
-							<li>Hospitals</li>
-							<li>Etc</li>
-						</ul>
+						{%flatblock "featData"%}
 					</div>
 				</div>
 				</div>
