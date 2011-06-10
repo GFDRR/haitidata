@@ -1,4 +1,6 @@
 from fabric.api import env, local, run, sudo, put
+from fabric.contrib.files import upload_template
+
   
 def vagrant():
     # change from the default user to 'vagrant'
@@ -11,13 +13,14 @@ def vagrant():
     env.key_filename = result.split()[1]
 
 def haitidataorg():
-    env.hosts = ['ubuntu@haitidata.org']
+    env.user = 'ubuntu'
+    env.hosts = ['haitidata.org']
     env.key_filename = 'geonode-gfdrr-labs.pem'
 
 def install():
     """Install RISIKO and it's dependencies
     """
-    run('wget https://github.com/GFDRR-Labs/haitidata/raw/master/scripts/haitidata-install')
+    run('wget https://github.com/GFDRR/haitidata/raw/master/scripts/haitidata-install')
     run('bash haitidata-install')
     run('echo "source ~/venv/bin/activate" >> .bash_aliases')
     run('echo "export DJANGO_SETTINGS_MODULE=haitidata.settings" >> .bash_aliases')
@@ -28,20 +31,16 @@ def install():
 def production():
     """Install and configure Apache and Tomcat
     """
-    put('haitidata.apache', 'haitidata.apache')
-    sudo('/bin/mv -f haitidata.apache /etc/apache2/sites-available/haitidata')
+    ctx = dict(user=env.user, host=env.host, project_home='/home/%s' % env.user)
+    upload_template('project.apache', 'project.apache', context=ctx)
+    sudo('apt-get install -y libapache2-mod-wsgi')
+    sudo('/bin/mv -f project.apache /etc/apache2/sites-available/haitidata')
     sudo('a2dissite default')
-    sudo('a2dissite geonode')
     sudo('a2ensite haitidata')
+    sudo('a2enmod proxy_http')
     run('mkdir -p logs')
-    pull()
-    run('source venv/bin/activate; pip install -r haitidata/extras/requirements.txt')
-    run('rm -rf haitidata/haitidata/site_media')
-    run('source venv/bin/activate;django-admin.py build_static --noinput')
-    run('cd haitidata/haitidata/site_media/static; wget -c http://dev.geonode.org/dev-data/geonode-client.zip; unzip geonode-client.zip')
-    #FIXME: Override geonode theme by copying the haitidata folder into theme
-    run('cp -rf haitidata/haitidata/media/haitidata/* haitidata/haitidata/site_media/static/theme')
-
+    run('. venv/bin/activate; haitidata collectstatic --noinput')
+    sudo('/etc/init.d/apache2 restart')
 
 def manual():
     """Manual steps, not everything can be automated, but we try.

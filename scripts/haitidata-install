@@ -57,7 +57,7 @@ echo ">>>> Clone/pull from the specified GeoNode repo and branch"
 checkup GFDRR/geonode.git geonode
 pushd .
 pip install -r geonode/shared/core-libs.txt
-cd src/GeoNodePy
+cd geonode/src/GeoNodePy
 python setup.py develop
 popd
 
