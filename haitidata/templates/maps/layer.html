@@ -125,10 +125,11 @@
 {% block main %}
 <div class="twocol">
 <div id="description"> <h3> {{ layer.resource.title|default:layer.typename }} </h3> </div>
-<p> <strong>{% trans "Abstract" %}:</strong> {{ layer.abstract|default:_("No abstract for this layer.") }} </p>
 
 <div id="preview_map"></div>
 <p>&nbsp;</p>
+
+<p> <strong>{% trans "Abstract" %}:</strong> {{ layer.abstract|default:_("No abstract for this layer.") }} </p>
 {% if layer.owner %}
 <p> <strong>{% trans "Owner" %}:</strong>
     <a href="{{ layer.owner.get_profile.get_absolute_url }}"> {{ layer.owner.username }} </a>: {{ layer.owner.first_name }} {{layer.owner.last_name }} ({{layer.owner.email}})
