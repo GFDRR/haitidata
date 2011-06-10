@@ -794,3 +794,38 @@ a.showLink:hover, a.hideLink:hover {
 .langbar a:hover {
    border-bottom: 1px dotted #36f; 
 }
+
+/*-------------
+Haitidata-style
+-------------*/
+
+#container{
+    width:920px;
+/*    background-color:black;*/
+    /*padding:20px;*/
+	overflow: hidden
+}
+
+#left-box, #right-box{
+    float:left;
+}
+
+#left-box{
+	width:600px;
+}
+
+#right-box{
+	border-top: 2px solid #666;
+    border-bottom: 2px solid #666;
+    border-left: 2px solid #666;
+    border-right: 2px solid #666;
+	width:296px;
+	padding:10px;
+}
+
+}
+
+#left-inside-box, #right-inside-box{
+    float:left;
+}
+
