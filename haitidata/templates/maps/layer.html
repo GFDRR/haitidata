@@ -168,7 +168,7 @@
     {{ layer.supplemental_information }}
 </p>
 {% endif %}
-
+{% comment %}
 {% if layer.display_type %}<p> <strong>{% trans "Type" %}:</strong> {{ layer.display_type }} </p>{% endif %}
 {% if layer.keywords %}<p> <strong>{% trans "Keywords" %}:</strong> {{ layer.keywords }}</p>{% endif %}
 {% if layer.edition %}<p> <strong>{% trans "Edition" %}:</strong> {{ layer.edition }}</p>{% endif %}
@@ -179,7 +179,7 @@
     {{ layer.constraints_use}} {{ layer.contraints_other}}
 </p>
 {% endif %}
-
+{% endcomment %}
 {% if layer.data_quality_statement %}
 <p> <strong>{% trans "Data Quality Statement" %}:</strong> 
     {{ layer.data_quality_statement }}
