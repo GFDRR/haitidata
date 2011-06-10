@@ -8,7 +8,7 @@ _ = lambda x: x
 
 DEBUG = True
 SITENAME = "HaitiData"
-SITEURL = "http://haitidata.org/"
+SITEURL = "http://localhost:8000/"
 TEMPLATE_DEBUG = DEBUG
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -89,15 +89,8 @@ ADMIN_MEDIA_PREFIX = os.path.join(STATIC_URL, "admin/")
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'myv-y4#7j-d*p-__@j#*3z@!y24fz8%^z2v6atuy4bo9vqr1_a'
 
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
-)
-
 TEMPLATE_CONTEXT_PROCESSORS = (
-    "django.core.context_processors.auth",
+    "django.contrib.auth.context_processors.auth",
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
@@ -130,7 +123,7 @@ TEMPLATE_DIRS = (
 )
 
 # The FULLY QUALIFIED url to the GeoServer instance for this GeoNode.
-GEOSERVER_BASE_URL = "http://localhost:8001/geoserver/"
+GEOSERVER_BASE_URL = "http://localhost:8001/geoserver-geonode-dev/"
 
 # The username and password for a user that can add and edit layer details on GeoServer
 GEOSERVER_CREDENTIALS = "geoserver_admin", SECRET_KEY
@@ -265,20 +258,78 @@ def get_user_url(u):
     return "http://" + s.domain + "/profiles/" + u.username
 
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'null': {
+            'level':'DEBUG',
+            'class':'django.utils.log.NullHandler',
+        },
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'file':{
+            'level':'DEBUG',
+            'class' : 'logging.handlers.RotatingFileHandler',
+            'formatter': 'verbose',
+            'filename': 'haitidata.log',
+            'maxBytes': '1024',
+            'backupCount': '3',
+         },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers':['null'],
+            'propagate': True,
+            'level':'INFO',
+        },
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'geonode': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+    }
+}
+
 ABSOLUTE_URL_OVERRIDES = {
     'auth.user': get_user_url
 }
 
 AUTH_PROFILE_MODULE = 'maps.Contact'
-REGISTRATION_OPEN = False
+REGISTRATION_OPEN = True
+ACCOUNT_ACTIVATION_DAYS = 7
 
-TRANSLATION_REGISTRY = "haitidata.translation"
+MODELTRANSLATION_TRANSLATION_REGISTRY = "haitidata.translation"
+
+DB_DATASTORE = False
 
 SERVE_MEDIA = DEBUG;
 
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = '/tmp/haitidata-messages' # change this to a proper location
 
 try:
     from local_settings import *
 except ImportError:
     pass
+
 
