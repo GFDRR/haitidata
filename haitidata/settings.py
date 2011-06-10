@@ -320,6 +320,8 @@ ACCOUNT_ACTIVATION_DAYS = 7
 
 MODELTRANSLATION_TRANSLATION_REGISTRY = "haitidata.translation"
 
+DB_DATASTORE = False
+
 SERVE_MEDIA = DEBUG;
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'

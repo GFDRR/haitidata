@@ -54,11 +54,9 @@ function checkup() {
 }
 
 echo ">>>> Clone/pull from the specified GeoNode repo and branch"
-checkup GeoNode/geonode.git geonode
+checkup GFDRR/geonode.git geonode
 pushd .
-cd geonode
-git checkout synth
-pip install -r shared/core-libs.txt
+pip install -r geonode/shared/core-libs.txt
 cd src/GeoNodePy
 python setup.py develop
 popd
