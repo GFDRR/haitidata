@@ -481,11 +481,24 @@ background-image: url(img/silk/link.png);
 }
 
 a.layer-upload-link {
+height: 50px;
 text-decoration: none;  
 background-repeat:no-repeat;
-padding-left: 18px;
+padding-left: 55px;
+padding-top: 18px;
 margin-top: 1em;
-background-image: url(img/silk/add.png);
+background-image: url(img/silk/Button-Add-icon.png);
+display: block;
+}
+
+a.map-creating-link {
+height: 50px;
+text-decoration: none;  
+background-repeat:no-repeat;
+padding-left: 68px;
+padding-top: 18px;
+margin-top: 1em;
+background-image: url(img/silk/Haiti_map_wbound.png);
 display: block;
 }
 
@@ -781,3 +794,38 @@ a.showLink:hover, a.hideLink:hover {
 .langbar a:hover {
    border-bottom: 1px dotted #36f; 
 }
+
+/*-------------
+Haitidata-style
+-------------*/
+
+#container{
+    width:920px;
+/*    background-color:black;*/
+    /*padding:20px;*/
+	overflow: hidden
+}
+
+#left-box, #right-box{
+    float:left;
+}
+
+#left-box{
+	width:600px;
+}
+
+#right-box{
+	border-top: 2px solid #666;
+    border-bottom: 2px solid #666;
+    border-left: 2px solid #666;
+    border-right: 2px solid #666;
+	width:296px;
+	padding:10px;
+}
+
+}
+
+#left-inside-box, #right-inside-box{
+    float:left;
+}
+

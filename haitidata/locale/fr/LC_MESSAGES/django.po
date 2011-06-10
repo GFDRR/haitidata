@@ -2,297 +2,304 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-03 15:39-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-06-03 15:41-0500\n"
+"PO-Revision-Date: 2011-06-06 09:47\n"
+"Last-Translator: Matthew Ford <mford@worldbank.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Translated-Using: django-rosetta 0.6.0\n"
 
 #: templates/data_base.html:4
 msgid "Browse Data"
-msgstr ""
+msgstr "Parcourir les données"
 
 #: templates/data_base.html:16 templates/data_base.html.py:28
 #: templates/index.html:47 templates/maps.html:17
 msgid "Search"
-msgstr ""
+msgstr "Recherche"
 
 #: templates/data_base.html:28
 msgid "for geospatial data"
-msgstr ""
+msgstr "pour les données géospatiales"
 
 #: templates/data_base.html:43 templates/index.html:102
 msgid "View All"
-msgstr ""
+msgstr "Voir tous"
 
 #: templates/data_base.html:50
 msgid "Browse"
-msgstr ""
+msgstr "Parcourir"
 
 #: templates/data_base.html:50
 msgid "by keyword"
-msgstr ""
+msgstr "par mot-clé"
 
 #: templates/data_base.html:58
 msgid "Upload"
-msgstr ""
+msgstr "Télécharger vers le serveur"
 
 #: templates/data_base.html:59
 msgid "We support Shapefile and GeoTIFF uploads."
 msgstr ""
+"Nous gérons les téléchargements vers le serveur de fichiers de formes "
+"et GeoTIFF"
 
 #: templates/data_base.html:60
 msgid "Upload a new layer"
-msgstr ""
+msgstr "Télécharger vers le serveur une nouvelle couche"
 
 #: templates/data_base.html:65
 msgid "For Developers"
-msgstr ""
+msgstr "Pour les développeurs"
 
 #: templates/data_base.html:66
 msgid ""
 " \n"
-"    If you are interested in information about accessing this information "
-"through OGC services, please visit our\n"
+"    If you are interested in information about accessing this information through OGC services, please visit our\n"
 "    "
 msgstr ""
+"Si vous êtes intéressé à accéder à cette information à travers les "
+"services de l'OGC, s'il vous plaît visitez notre \\ n"
 
 #: templates/data_base.html:69
 msgid "developer page"
-msgstr ""
+msgstr "page développeur"
 
 #: templates/hazardinfo.html:6 templates/partnerinfo.html:6
 msgid "Partners Info"
-msgstr ""
+msgstr "Info des partenaires"
 
 #: templates/index.html:6
 msgid "Welcome!"
-msgstr ""
+msgstr "Bienvenue!"
 
 #: templates/index.html:33
 msgid "Explore Maps"
-msgstr ""
+msgstr "Explorer les cartes"
 
 #: templates/index.html:39
 msgid "Create Map"
-msgstr ""
+msgstr "Créer une carte"
 
 #: templates/index.html:107
 msgid "Upload data"
-msgstr ""
+msgstr "Télécharger"
 
 #: templates/maps.html:4
 msgid "Browse Maps"
-msgstr ""
+msgstr "Parcourir les cartes"
 
 #: templates/maps.html:45
 msgid "All Maps"
-msgstr ""
+msgstr "Toutes les Cartes"
 
 #: templates/maps.html:46
 msgid "New Maps"
-msgstr ""
+msgstr "Nouvelles cartes"
 
 #: templates/maps.html:55
 msgid "Create your own map"
-msgstr ""
+msgstr "Créez votre propre carte"
 
 #: templates/page_layout.html:23
 msgid "Change password"
-msgstr ""
+msgstr "Changer mot de passe"
 
 #: templates/page_layout.html:23
 msgid "Log out"
-msgstr ""
+msgstr "Déconnecter"
 
 #: templates/page_layout.html:26
 msgid "Register"
-msgstr ""
+msgstr "S'inscrire"
 
 #: templates/termsofuse.html:6
 msgid "Terms of use"
-msgstr ""
+msgstr "Conditions d'utilisation"
 
 #: templates/admin/base_site.html:4
 msgid "Haitidata admin"
-msgstr ""
+msgstr "admin HaitiData"
 
 #: templates/admin/base_site.html:7
 msgid "HaitiData administration"
-msgstr ""
+msgstr "administration HaitiData"
 
 #: templates/maps/layer.html:128
 msgid "Abstract"
-msgstr ""
+msgstr "Résumé"
 
 #: templates/maps/layer.html:128
 msgid "No abstract for this layer."
-msgstr ""
+msgstr "Aucun résumé n'est fourni pour cette couche."
 
 #: templates/maps/layer.html:133
 msgid "Owner"
-msgstr ""
+msgstr "Propriétaire"
 
 #: templates/maps/layer.html:139
 msgid "Point of Contact"
-msgstr ""
+msgstr "Point de Contact"
 
 #: templates/maps/layer.html:144
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: templates/maps/layer.html:145
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: templates/maps/layer.html:146
 msgid "Organization"
-msgstr ""
+msgstr "Organisation"
 
 #: templates/maps/layer.html:147
 msgid "Position"
-msgstr ""
+msgstr "Position"
 
 #: templates/maps/layer.html:148
 msgid "Voice"
-msgstr ""
+msgstr "Voix"
 
 #: templates/maps/layer.html:149
 msgid "Fax"
-msgstr ""
+msgstr "Fax"
 
 #: templates/maps/layer.html:150
 msgid "Delivery"
-msgstr ""
+msgstr "Livraison"
 
 #: templates/maps/layer.html:151
 msgid "Area"
-msgstr ""
+msgstr "Lieu"
 
 #: templates/maps/layer.html:152
 msgid "Zip Code"
-msgstr ""
+msgstr "Code postal"
 
 #: templates/maps/layer.html:153
 msgid "Country"
-msgstr ""
+msgstr "Pays"
 
 #: templates/maps/layer.html:160
 msgid "Attributes"
-msgstr ""
+msgstr "Attributs"
 
 #: templates/maps/layer.html:166
 msgid "Supplemental Information"
-msgstr ""
+msgstr "Renseignements supplémentaires"
 
 #: templates/maps/layer.html:171
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: templates/maps/layer.html:172
 msgid "Keywords"
-msgstr ""
+msgstr "Mots-clés"
 
 #: templates/maps/layer.html:173
 msgid "Edition"
-msgstr ""
+msgstr "Edition"
 
 #: templates/maps/layer.html:174
 msgid "Topic Category"
-msgstr ""
+msgstr "Sujet Catégorie"
 
 #: templates/maps/layer.html:177
 msgid "Citation"
-msgstr ""
+msgstr "Citation"
 
 #: templates/maps/layer.html:183
 msgid "Data Quality Statement"
-msgstr ""
+msgstr "Énoncé sur la qualité des données"
 
 #: templates/maps/layer.html:188
 msgid "Bounding Box"
-msgstr ""
+msgstr "Zone de délimitation"
 
 #: templates/maps/layer.html:189
 msgid "Native SRS"
-msgstr ""
+msgstr "SRS d'origine"
 
 #: templates/maps/layer.html:189
 msgid "No SRS specified."
-msgstr ""
+msgstr "Aucun SRS spécifié."
 
 #: templates/maps/layer.html:196
 msgid "Download"
-msgstr ""
+msgstr "Télécharger"
 
 #: templates/maps/layer.html:197
 msgid "Data"
-msgstr ""
+msgstr "Données"
 
 #: templates/maps/layer.html:202
 msgid "Metadata"
-msgstr ""
+msgstr "Métadonnées"
 
 #: templates/maps/layer.html:206
 msgid "No metadata links provided for this data."
-msgstr ""
+msgstr "Aucun lien métadonnées fournies pour ces données."
 
 #: templates/maps/layer.html:209
 msgid "Maps"
-msgstr ""
+msgstr "Cartes"
 
 #: templates/maps/layer.html:211
 msgid "The following maps use this data set"
-msgstr ""
+msgstr "Les cartes suivantes utilisent cet ensemble de données"
 
 #: templates/maps/layer.html:218
 msgid "This layer is not currently used in any maps."
-msgstr ""
+msgstr "Cette couche n'est actuellement utilisée par aucune carte."
 
 #: templates/maps/layer.html:222
 msgid "Styles"
-msgstr ""
+msgstr "Styles"
 
 #: templates/maps/layer.html:223
 msgid ""
-"The following styles are associated with this data set.  Choose a style to "
-"view it in the preview to the left.  Click on a style name to view or edit "
-"the style."
+"The following styles are associated with this data set.  Choose a style"
+" to view it in the preview to the left.  Click on a style name to view "
+"or edit the style."
 msgstr ""
+"Les styles suivants sont associés à cet ensemble de données. "
+"Choisissez un style pour le voir dans l'aperçu pour la gauche. Cliquez"
+" sur un nom de style pour afficher ou modifier le style."
 
 #: templates/maps/layer.html:236
 msgid "Default style:"
-msgstr ""
+msgstr "Style par défaut:"
 
 #: templates/maps/layer.html:257
 msgid "Manage"
-msgstr ""
+msgstr "Gérer"
 
 #: templates/maps/layer.html:261
 msgid "Update the description of this data"
-msgstr ""
+msgstr "Mise à jour de la description de ces données"
 
 #: templates/maps/layer.html:262
 msgid "Upload a new version of this data"
-msgstr ""
+msgstr "Envoyer une nouvelle version de ces données"
 
 #: templates/maps/layer.html:265
 msgid "Edit Permissions"
-msgstr ""
+msgstr "Modifier les autorisations"
 
 #: templates/maps/layer.html:268
 msgid "Remove"
-msgstr ""
+msgstr "Supprimer"
 
 #: templates/maps/layer.html:277
 msgid "Permissions"
-msgstr ""
+msgstr "Autorisations"
