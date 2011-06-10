@@ -35,7 +35,7 @@ def production():
     upload_template('project.apache', 'project.apache', context=ctx)
     sudo('apt-get install -y libapache2-mod-wsgi')
     sudo('/bin/mv -f project.apache /etc/apache2/sites-available/haitidata')
-    sudo('ln -s /etc/default/haitidata %s/haitidata/haitidata/local_settings.py' % ctx['project_home'])
+    sudo('ln -sf /etc/default/geonode %s/haitidata/haitidata/local_settings.py' % ctx['project_home'])
     sudo('a2dissite default')
     sudo('a2ensite haitidata')
     sudo('a2enmod proxy_http')

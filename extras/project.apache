@@ -31,8 +31,8 @@ WSGIDaemonProcess haitidata user=%(user)s threads=1 processes=5 python-path=%(pr
    WSGIScriptAlias / %(project_home)s/haitidata/extras/project.wsgi
    WSGIPassAuthorization On
  
-   ProxyPass /geoserver-geonode-dev http://localhost:8001/geoserver-geonode-dev
-   ProxyPassReverse /geoserver-geonode-dev http://localhost:8001/geoserver-geonode-dev
-   ProxyPass /geonetwork http://localhost:8001/geonetwork/
-   ProxyPassReverse /geonetwork http://localhost:8001/geonetwork
+   ProxyPass /geoserver-geonode-dev http://localhost:8080/geoserver-geonode-dev
+   ProxyPassReverse /geoserver-geonode-dev http://localhost:8080/geoserver-geonode-dev
+   ProxyPass /geonetwork http://localhost:8080/geonetwork/
+   ProxyPassReverse /geonetwork http://localhost:8080/geonetwork
 </VirtualHost>
