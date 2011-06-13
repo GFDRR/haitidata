@@ -3,14 +3,14 @@
 {% load flatblock_tags %}
 
 
-{% block title %} {% trans "Partners Info" %} - {{ block.super }} {% endblock %}
+{% block title %} {% trans "About haitidata.org" %} - {{ block.super }} {% endblock %}
 {% block indexclass %} class="here" {% endblock %}
 
 {% block main %} 
 <div class="twocol">
 <!-- TODO: i18n on the text here -->
   <div class="block">
-       {% flatblock "partnerinfo" %}
+       {% flatblock "abpit" %}
   </div>
 </div>
 {% endblock %}
