@@ -49,11 +49,9 @@ Ext.onReady(function(){
 {% endblock %}
 
 {% block main %} 
-<div class="onecol">
+<div class="twocol">
 <!-- TODO: i18n on the text here -->
-
-		<div id="container">
-
+		
 			<div id="left-box">
 				<div id="containerIII">
 					<h2>{% flatblock "titleI"%}</h2>
@@ -82,14 +80,14 @@ Ext.onReady(function(){
 						{%flatblock "featData"%}
 					</div>
 				</div>
-				</div>
+</div>
+</div>
+</div>
+{% endblock %}		
 
-			</div>
+{% block sidebar %}
 <!-- This is the right box with the intro-->
-			<div id="right-box">
-				<p> {% flatblock "index.intro" %} </p>
-			</div>
-		</div>
-
+<div class="threecol">
+	<p> {% flatblock "index.intro" %} </p>
 </div>
 {% endblock %}
