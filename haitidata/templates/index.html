@@ -51,7 +51,46 @@ Ext.onReady(function(){
 {% block main %} 
 <div class="twocol">
 <!-- TODO: i18n on the text here -->
-{% flatblock "index.main" %}
+
+	   <img align=right style="border:2px solid #008CB3; margin=5px;"  src='{{STATIC_URL}}theme/img/haiti.png'>
+  <div class="block">
+       {% flatblock "index.maps" %}
+    <div class="selfclear">
+      <div id="explore_map" class="content-button"></div>
+    </div>
+       {% flatblock "index.create" %}
+    <div class="selfclear">
+      <div id="create_map" class="content-button"></div>
+    </div>
+</div>
+
+  <div id="data_block" class="block">
+    <p>
+       {% flatblock "index.data" %}
+    </p>
+
+    <!-- Data search text box and button -->
+
+    <form action="{% url search %}" method="POST">
+      {% csrf_token %}
+        <table>
+          <tr>
+            <td>
+              <input type="text" id="search_query" name="q" />
+            </td>
+            <td>
+              <div id="submit_search"></div>
+            </td>
+          </tr>
+        </table>
+        <a href="{% url search %}">{% trans "View All" %}</a>
+    </form>
+  
+    <!-- Links to specialized views of data -->
+    <!-- Upload data button (link?) -->
+    <a class="layer-upload-link" href="{% url geonode.maps.views.upload_layer%}">{% trans "Upload data"  %}</a>
+  </div>
+
 </div>
 
 <div class="threecol"> 
