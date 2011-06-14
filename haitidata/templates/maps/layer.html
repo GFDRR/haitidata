@@ -203,9 +203,8 @@
     <p> <strong>{% trans "Metadata" %}: </strong>
         {% for mimetype, mdtype, link in layer.metadata_links %}
             <a href="{{link}}">{{mdtype}}</a>
-        {% empty %}
-            <em> {% trans "No metadata links provided for this data." noop %} </em>
         {% endfor %}
+        <a href="{% url metadata layer.id %}">Excel</a>
     </p>
     <h3>{% trans "Maps" %} </h3>
     {% if layer.maps %}
