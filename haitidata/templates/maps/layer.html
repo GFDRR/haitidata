@@ -124,15 +124,43 @@
 
 {% block main %}
 <div class="twocol">
-<div id="description"> <h3> {{ layer.resource.title|default:layer.typename }} </h3> </div>
+<div id="description"> <h3> {% trans "Title" %}: 
+{{ layer.resource.title|default:layer.typename }}</h3>
+ </div>
+
+<p> <strong>{% trans "File name" %}:</strong> {{ layer.store }} </p>
 
 <div id="preview_map"></div>
 <p>&nbsp;</p>
 
 <p> <strong>{% trans "Abstract" %}:</strong> {{ layer.abstract|default:_("No abstract for this layer.") }} </p>
-{% if layer.owner %}
-<p> <strong>{% trans "Owner" %}:</strong>
-    <a href="{{ layer.owner.get_profile.get_absolute_url }}"> {{ layer.owner.username }} </a>: {{ layer.owner.first_name }} {{layer.owner.last_name }} ({{layer.owner.email}})
+
+{% if layer.purpose %}
+<p> <strong>{% trans "Purpose" %}:</strong> {{ layer.purpose}} </p>
+{% endif %}
+
+
+{% if layer.data_quality_statement %}
+<p> <strong>{% trans "Data Quality Statement" %}:</strong> 
+    {{ layer.data_quality_statement }}
+</p>
+{% endif %}
+
+<p> <strong>{% trans "Metadata language" %}:</strong> {{ layer.language	 }} </p>
+
+<p> <strong>{% trans "Map date" %}:</strong> {{ layer.date|default:_("No date for this layer.") }} 		 <strong>&nbsp;&nbsp;&nbsp;&nbsp{% trans "Date Type" %}:</strong> {{ layer.date_type }}	<strong>&nbsp;&nbsp;&nbsp;&nbsp{% trans "Edition" %}:</strong> {{ layer.edition}} </p>
+
+<p> <strong>{% trans "Type" %}:</strong> {{ layer.spatial_representation_type|default:_("Not defined")	 }} </p>
+
+{% if layer.attribute_names %}
+<p> <strong>{% trans "Attributes" %}:</strong> 
+    {{ layer.attribute_names|join:", " }}
+</p>
+{% endif %}
+
+{% if layer.maintenance_frequency %}
+<p> <strong>{% trans "Update frequency" %}:</strong> 
+    {{ layer.maintenance_frequency}}
 </p>
 {% endif %}
 
@@ -157,32 +185,26 @@
 </p>
 {% endif %}
 
-{% if layer.attribute_names %}
-<p> <strong>{% trans "Attributes" %}:</strong> 
-    {{ layer.attribute_names|join:", " }}
-</p>
-{% endif %}
-
-{% if layer.supplemental_information %}
-<p> <strong>{% trans "Supplemental Information" %}:</strong> 
-    {{ layer.supplemental_information }}
-</p>
-{% endif %}
-{% comment %}
-{% if layer.display_type %}<p> <strong>{% trans "Type" %}:</strong> {{ layer.display_type }} </p>{% endif %}
 {% if layer.keywords %}<p> <strong>{% trans "Keywords" %}:</strong> {{ layer.keywords }}</p>{% endif %}
-{% if layer.edition %}<p> <strong>{% trans "Edition" %}:</strong> {{ layer.edition }}</p>{% endif %}
-{% if layer.topic_category %}<p> <strong>{% trans "Topic Category" %}:</strong> {{ layer.topic_category }}</p>{% endif %}
+{% if layer.keywords_region %}<p> <strong>{% trans "Country and Region" %}:</strong> {{ layer.keywords_region }} </p>{% endif %}
+{% if layer.constraints_use %}<p> <strong>{% trans "Use Constraints (Legal)" %}:</strong> {{ layer.constraints_use }} </p>{% endif %}
+{% if layer.topic_category %}<p> <strong>{% trans "Topic Category" %}:</strong> {{ layer.topic_category }} </p>{% endif %}
 
 {% if layer.constraints_use or layer.constraints_other %}
 <p> <strong>{% trans "Citation" %}:</strong> 
     {{ layer.constraints_use}} {{ layer.contraints_other}}
 </p>
 {% endif %}
-{% endcomment %}
-{% if layer.data_quality_statement %}
-<p> <strong>{% trans "Data Quality Statement" %}:</strong> 
-    {{ layer.data_quality_statement }}
+
+{% if layer.owner %}
+<p> <strong>{% trans "Owner" %}:</strong>
+    <a href="{{ layer.owner.get_profile.get_absolute_url }}"> {{ layer.owner.username }} </a>: {{ layer.owner.first_name }} {{layer.owner.last_name }} ({{layer.owner.email}})
+</p>
+{% endif %}
+
+{% if layer.supplemental_information %}
+<p> <strong>{% trans "Supplemental Information" %}:</strong> 
+    {{ layer.supplemental_information }}
 </p>
 {% endif %}
 
